@@ -43,5 +43,16 @@ namespace NET.W._2018.Zenovich._03.Tests
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void CalculatedGcd_NullNumbers_ArgumentNullException()
+        {
+            // arrange
+            int[] numbers = null;
+
+            // act
+            gcd.CalculateGcd(numbers);
+        }
     }
 }
