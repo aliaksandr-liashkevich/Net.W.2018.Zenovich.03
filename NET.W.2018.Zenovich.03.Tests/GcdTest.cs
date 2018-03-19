@@ -54,5 +54,19 @@ namespace NET.W._2018.Zenovich._03.Tests
             // act
             gcd.CalculateGcd(numbers);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculatedGcd_OneParam_ArgumentException()
+        {
+            // arrange
+            int[] numbers = new int[]
+            {
+                1
+            };
+
+            // act
+            gcd.CalculateGcd(numbers);
+        }
     }
 }
