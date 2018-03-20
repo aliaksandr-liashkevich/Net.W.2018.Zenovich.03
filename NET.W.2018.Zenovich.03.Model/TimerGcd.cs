@@ -42,7 +42,7 @@ namespace NET.W._2018.Zenovich._03.Model
             _timer.Start();
             try
             {
-                result = ModelGcd(numbers);
+                result = ModelNumbersGcd(numbers);
             }
             catch (Exception exception)
             {
@@ -56,6 +56,25 @@ namespace NET.W._2018.Zenovich._03.Model
             return result;
         }
 
-        protected abstract int ModelGcd(int[] number);
+        protected virtual int ModelNumbersGcd(int[] numbers)
+        {
+            int length = numbers.Length, result = 0;
+
+            result = CalculateGcd(numbers[0], numbers[1]);
+
+            if (length == 2)
+            {
+                return result;
+            }
+
+            for (int i = 2; i < length; i++)
+            {
+                result = CalculateGcd(numbers[i], result);
+            }
+
+            return result;
+        }
+
+        protected abstract int CalculateGcd(int left, int right);
     }
 }
