@@ -1,7 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using NET.W._2018.Zenovich._03.API;
 using NET.W._2018.Zenovich._03.Model;
+using System;
 
 namespace NET.W._2018.Zenovich._03.Tests
 {
@@ -67,6 +68,27 @@ namespace NET.W._2018.Zenovich._03.Tests
 
             // act
             gcd.CalculateGcd(numbers);
+        }
+
+        [TestMethod]
+        public void CalculatedGcd_TimerShouldBeCalledOneTime()
+        {
+            // arrange
+            Mock<ITimer> mockITimer = new Mock<ITimer>();
+
+            IGcd gcd = new Gcd(mockITimer.Object);
+
+            int[] numbers = new int[]
+            {
+                44, 20, 30, 12, 19
+            };
+
+            // act
+            gcd.CalculateGcd(numbers);
+
+            // assert
+            mockITimer.Verify((timer) => timer.Start(), Times.Once);
+            mockITimer.Verify((timer) => timer.Stop(), Times.Once);
         }
     }
 }

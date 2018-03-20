@@ -1,45 +1,27 @@
 ﻿using NET.W._2018.Zenovich._03.API;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NET.W._2018.Zenovich._03.Model
 {
     public class Gcd : IGcd
     {
-        private Stopwatch _stopwatch;
-        private TimeSpan _timeSpan;
+        private ITimer _timer;
+
+        public Gcd()
+        {
+            _timer = new Timer();
+        }
+
+        public Gcd(ITimer timer)
+        {
+            _timer = timer;
+        }
 
         public TimeSpan CompletionTime
         {
             get
             {
-                if (_timeSpan == null)
-                {
-                    throw new InvalidOperationException("Method calculateGcd should be called");
-                }
-
-                return _timeSpan;
-            }
-            protected set
-            {
-                _timeSpan = value;
-            }
-        }
-
-        protected Stopwatch Stopwatch
-        {
-            get
-            {
-                if (_stopwatch == null)
-                {
-                    _stopwatch = new Stopwatch();
-                }
-
-                return _stopwatch;
+                return _timer.GetTimeSpan();
             }
         }
 
@@ -85,7 +67,7 @@ namespace NET.W._2018.Zenovich._03.Model
         public int CalculateGcd(params int[] numbers)
         {
             int result;
-            Stopwatch.Start();
+            _timer.Start();
             try
             {
                 result = MainGcd(numbers);
@@ -96,9 +78,7 @@ namespace NET.W._2018.Zenovich._03.Model
             }
             finally
             {
-                Stopwatch.Stop();
-                CompletionTime = Stopwatch.Elapsed;
-                Stopwatch.Reset();
+                _timer.Stop();
             }
 
             return result;
