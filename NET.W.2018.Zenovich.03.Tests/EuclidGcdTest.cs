@@ -7,7 +7,7 @@ using System;
 namespace NET.W._2018.Zenovich._03.Tests
 {
     [TestClass]
-    public class GcdTest
+    public class EuclidGcdTest
     {
         public TestContext TestContext { get; set; }
         private static IGcd gcd;
@@ -15,7 +15,7 @@ namespace NET.W._2018.Zenovich._03.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            gcd = new Gcd();
+            gcd = new EuclidGcd();
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace NET.W._2018.Zenovich._03.Tests
             // arrange
             Mock<ITimer> mockITimer = new Mock<ITimer>();
 
-            IGcd gcd = new Gcd(mockITimer.Object);
+            IGcd gcd = new EuclidGcd(mockITimer.Object);
 
             int[] numbers = new int[]
             {
