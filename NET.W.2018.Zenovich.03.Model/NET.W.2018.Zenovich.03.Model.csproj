@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryGcd.cs" />
+    <Compile Include="ByteConverter.cs" />
+    <Compile Include="DoubleConverter.cs" />
     <Compile Include="EuclidGcd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Timer.cs" />

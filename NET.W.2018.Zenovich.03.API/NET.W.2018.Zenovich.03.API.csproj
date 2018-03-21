@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IByteConverter.cs" />
+    <Compile Include="IDoubleConverter.cs" />
     <Compile Include="IGcd.cs" />
     <Compile Include="ITimer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

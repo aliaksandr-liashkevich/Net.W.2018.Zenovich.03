@@ -3,6 +3,9 @@ using System;
 
 namespace NET.W._2018.Zenovich._03.Model
 {
+    /// <summary>
+    /// is base class for calculation gcd and timespan
+    /// </summary>
     public abstract class TimerGcd : IGcd
     {
         protected ITimer _timer;
@@ -25,6 +28,11 @@ namespace NET.W._2018.Zenovich._03.Model
             }
         }
 
+        /// <summary>
+        /// implementations binary gcd algorithm for several parameters.
+        /// </summary>
+        /// <param name="numbers">number array will be used in gcd calculation.</param>
+        /// <returns>gcd of all parameters.</returns>
         public int CalculateGcd(params int[] numbers)
         {
             if (numbers == null)
