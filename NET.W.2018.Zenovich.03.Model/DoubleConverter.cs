@@ -6,7 +6,7 @@ using SysConvert = System.Convert;
 namespace NET.W._2018.Zenovich._03.Model
 {
     /// <summary>
-    /// convert double number to string
+    /// Convert double number to string.
     /// </summary>
     public class DoubleConverter : IDoubleConverter
     {
@@ -26,10 +26,10 @@ namespace NET.W._2018.Zenovich._03.Model
         }
 
         /// <summary>
-        /// implementations convert double number to string
+        /// Implementations convert double number to string.
         /// </summary>
-        /// <param name="number">number will be used in convertion</param>
-        /// <returns>string of double number</returns>
+        /// <param name="number">Number will be used in conversation.</param>
+        /// <returns>String of double number.</returns>
         public string Convert(double number)
         {
             byte[] bytes = ByteConverter.GetBytes(number);

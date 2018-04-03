@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace NET.W._2018.Zenovich._03.Model
 {
     /// <summary>
-    /// calculate time of gcd operation
+    /// Calculate time of gcd operation.
     /// </summary>
     public class Timer : ITimer
     {
@@ -25,7 +25,7 @@ namespace NET.W._2018.Zenovich._03.Model
         }
 
         /// <summary>
-        /// get timespan from timer
+        /// Get time span from timer.
         /// </summary>
         /// <returns></returns>
         public TimeSpan GetTimeSpan()
@@ -34,7 +34,7 @@ namespace NET.W._2018.Zenovich._03.Model
         }
 
         /// <summary>
-        /// starts timer
+        /// Starts timer.
         /// </summary>
         public void Start()
         {
@@ -42,7 +42,7 @@ namespace NET.W._2018.Zenovich._03.Model
         }
 
         /// <summary>
-        /// stops timer
+        /// Stops timer.
         /// </summary>
         public void Stop()
         {
